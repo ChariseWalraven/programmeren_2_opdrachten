@@ -3,6 +3,10 @@
 # minimal libraries - can use os
 from collections.abc import Callable
 
+# TODO: Geef TinyXL de mogelijkheid om een rij toe te voegen:
+#      * ADD 6, Barrie, van Dongen, bvd@hotmail.com, Male, 24
+#      * Sla deze wijzigingen vervolgens op in het bestand TinyXL.csv
+
 csv_location =  './data/MOCK_DATA.csv'
 
 def remove_empty_rows(csv_iter: list[dict]) -> list[dict]:
