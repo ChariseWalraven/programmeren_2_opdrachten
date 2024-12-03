@@ -20,7 +20,7 @@ def call_method(
     (method, is_aggregation) = get_method_by_key(method_key)
     res = str(method([int(row[col]) for row in csv_iter]) \
         if is_aggregation \
-        else method(csv_iter, *method_args))
+        else method(*method_args))
     return res
 
 
@@ -60,7 +60,8 @@ def parse_csv(file_contents: str, row_delimiter: str = '\n', col_delimiter: str 
 
 
 def write_row_to_csv(user_input_row: str, f: TextIO):
-    f.write(user_input_row)
+    f.write(user_input_row + '\n')
+    return f'{user_input_row} appended to csv'
 
 
 def get_row_dict(csv_iter, row_to_add):
